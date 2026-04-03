@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --bg: #f6fafd;
+    --bg-soft: #edf5fb;
+    --panel: rgba(246, 250, 253, 0.8);
+    --panel-strong: rgba(255, 255, 255, 0.94);
+    --panel-muted: rgba(179, 207, 229, 0.42);
+    --line: rgba(26, 61, 99, 0.12);
+    --line-strong: rgba(26, 61, 99, 0.24);
+    --text: #0a1931;
+    --muted: #4a7fa7;
+    --accent: #1a3d63;
+    --accent-deep: #0a1931;
+    --accent-2: #4a7fa7;
+    --shadow: 0 18px 60px rgba(10, 25, 49, 0.1);
+  }
+
+  .dark {
+    color-scheme: dark;
+    --bg: #0a1931;
+    --bg-soft: #10233f;
+    --panel: rgba(12, 27, 49, 0.86);
+    --panel-strong: rgba(16, 35, 63, 0.95);
+    --panel-muted: rgba(26, 61, 99, 0.42);
+    --line: rgba(179, 207, 229, 0.14);
+    --line-strong: rgba(179, 207, 229, 0.26);
+    --text: #f6fafd;
+    --muted: #4a7fa7;
+    --accent: #4a7fa7;
+    --accent-deep: #1a3d63;
+    --accent-2: #4a7fa7;
+    --shadow: 0 18px 60px rgba(0, 0, 0, 0.24);
+  }
+
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(74, 127, 167, 0.16), transparent 28%),
+      radial-gradient(circle at top right, rgba(179, 207, 229, 0.24), transparent 26%),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+    color: var(--text);
+    @apply transition-colors duration-300;
+  }
+
+  * {
+    border-color: var(--line);
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--accent) 24%, transparent);
+  }
+}
+
+@layer components {
+  .app-shell {
+    background:
+      radial-gradient(circle at 20% 0%, rgba(74, 127, 167, 0.14), transparent 24%),
+      radial-gradient(circle at 100% 10%, rgba(179, 207, 229, 0.18), transparent 24%),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+  }
+
+  .surface {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(16px);
+  }
+
+  .surface-strong {
+    background: var(--panel-strong);
+    border: 1px solid var(--line-strong);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(18px);
+  }
+
+  .surface-muted {
+    background: var(--panel-muted);
+    border: 1px solid var(--line);
+  }
+
+  .btn-primary {
+    background:
+      linear-gradient(135deg, color-mix(in srgb, var(--accent) 92%, white) 0%, var(--accent-deep) 56%, var(--accent-2) 100%);
+    color: #f6fafd;
+    border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+    @apply transition-all duration-200;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 34px rgba(10, 25, 49, 0.22);
+  }
+
+  .btn-secondary {
+    background: var(--panel-strong);
+    color: var(--text);
+    border: 1px solid var(--line-strong);
+    @apply transition-colors duration-200;
+  }
+
+  .btn-secondary:hover {
+    background: color-mix(in srgb, var(--panel-strong) 70%, white);
+  }
+
+  .input-shell {
+    background: color-mix(in srgb, var(--panel-strong) 86%, transparent);
+    color: var(--text);
+    border: 1px solid var(--line);
+    @apply outline-none transition-all duration-200;
+  }
+
+  .input-shell::placeholder {
+    color: var(--muted);
+  }
+
+  .input-shell:focus {
+    border-color: color-mix(in srgb, var(--accent) 70%, white);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 16%, transparent);
+  }
+
+  .eyebrow {
+    color: var(--accent-2);
+    letter-spacing: 0.18em;
+    @apply text-[11px] font-bold uppercase;
+  }
+
+  .brand-wordmark {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--muted) 58%, transparent);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--muted) 78%, transparent);
+}
