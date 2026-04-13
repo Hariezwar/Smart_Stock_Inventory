@@ -1,197 +1,111 @@
-Inventix
+# 🚀 Inventix
 
-Inventix is a full-stack inventory management app built with:
+### *Smart Inventory Management System*
 
-    FastAPI + SQLAlchemy + SQLite on the backend
-    React + Vite + Tailwind CSS on the frontend
-    Chart.js for analytics visualizations
+<p align="center">
+  <img src="https://img.shields.io/badge/Backend-FastAPI-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Build-Vite-purple?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Database-SQLite-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/License-MIT-black?style=for-the-badge" />
+</p>
 
-It includes authentication, supplier and product management, alerts, purchase history, profile settings, and an inventory chatbot.
-Important Data Note
+---
 
-The live application data is stored in:
+## ✨ Overview
 
-inventix/inventix.db
+**Inventix** is a modern, full-stack inventory management system designed to help businesses track stock, manage suppliers, and make data-driven decisions with ease.
 
-This file contains saved:
+---
 
-    user accounts
-    products
-    suppliers
-    purchase history
-    purchase orders
+## ⚡ Features
 
-Do not delete or overwrite inventix.db if you want to keep existing data.
-Project Structure
+* 📦 Real-time inventory tracking
+* 📊 Interactive analytics dashboard
+* 🔔 Smart low-stock alerts
+* 👥 Supplier & product management
+* 🔐 Secure authentication system
 
+---
+
+## 🏗️ Tech Stack
+
+| Layer    | Technology                |
+| -------- | ------------------------- |
+| Backend  | FastAPI,Node.js,Express.js|
+| Frontend | React, Vite, Tailwind CSS |
+| Database | SQLite, MongoDB, Mongoose |
+| Charts   | Chart.js                  |
+| Security | JWT , Bcrypt              |
+
+---
+
+## 📁 Project Structure
+
+```bash id="k03qcd"
 inventix/
-├─ README.md
-├─ inventix.db
-├─ uploads/
-│  └─ avatars/
-├─ backend/
-│  ├─ requirements.txt
-│  ├─ uploads/
-│  └─ app/
-│     ├─ main.py
-│     ├─ models.py
-│     ├─ schemas.py
-│     ├─ seed.py
-│     ├─ core/
-│     │  ├─ auth.py
-│     │  ├─ config.py
-│     │  └─ database.py
-│     ├─ routers/
-│     └─ services/
-└─ frontend/
-   ├─ package.json
-   ├─ vite.config.js
-   └─ src/
-      ├─ components/
-      ├─ context/
-      ├─ pages/
-      ├─ services/
-      ├─ utils/
-      ├─ App.jsx
-      ├─ main.jsx
-      └─ index.css
+├── backend/
+├── frontend/
+├── database/
+├── README.md
+└── requirements.txt
+```
 
-Features
+---
 
-    Dashboard with KPI cards and charts
-    Product inventory management
-    Supplier management
-    Alerts and reorder actions
-    Purchase history tracking
-    Login, signup, password reset, and security question flow
-    Profile editing and avatar uploads
-    Search across products and suppliers
-    Inventory chatbot
+## 🚀 Getting Started
 
-Prerequisites
+### 🔹 Clone Repository
 
-    Python 3.9+
-    Node.js 16+
-    npm
-
-Backend Setup
-
-From the project root:
-
+```bash id="xkk6g9"
+git clone https://github.com/your-username/inventix.git
 cd inventix
-python -m venv venv
-.\venv\Scripts\activate
-pip install -r backend\requirements.txt
+```
 
-Start the backend:
+### 🔹 Run Backend
 
-$env:PYTHONPATH = (Get-Item .).FullName
-python -m uvicorn backend.app.main:app --reload --host 127.0.0.1 --port 8000
+```bash id="1j5umk"
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
 
-Backend URLs:
+### 🔹 Run Frontend
 
-    API: http://127.0.0.1:8000
-    Docs: http://127.0.0.1:8000/docs
-
-Frontend Setup
-
-Open a new terminal:
-
-cd inventix\frontend
+```bash id="l4o03k"
+cd frontend
 npm install
 npm run dev
+```
 
-Frontend URL:
+---
 
-    App: http://127.0.0.1:5173
+## 🔮 Roadmap
 
-By default, the frontend calls:
+* 🤖 AI-based demand prediction
+* ☁️ Cloud deployment (AWS/Firebase)
+* 📱 Mobile app integration
 
-http://127.0.0.1:8000
+---
 
-Environment Notes
+## 🤝 Contributing
 
-Backend .env values can be placed in:
+Pull requests are welcome. For major changes, please open an issue first.
 
-    backend/.env
-    backend/app/.env if needed by local tooling
+---
 
-Useful backend environment variables:
+## 📄 License
 
-    OPENAI_API_KEY
-    SMTP_USER
-    SMTP_PASSWORD
-    FRONTEND_URL
-    SECRET_KEY
+This project is licensed under the MIT License.
 
-Backend Architecture
+---
 
-The backend is organized as:
+## 👨‍💻 Author
 
-    routers/ for API endpoints
-    services/ for business logic
-    core/ for auth, config, and database setup
-    models.py for SQLAlchemy models
-    schemas.py for request/response validation
+Hariezwar U
 
-Current routed modules:
+---
 
-    auth
-    products
-    suppliers
-    dashboard
-    chatbot
-    orders (/purchase-history)
-    alerts
-    search
+## ⭐ Support
 
-Frontend Architecture
-
-The frontend is organized as:
-
-    components/ for reusable UI
-    pages/ for route-level screens
-    services/ for API access
-    context/ for auth, theme, and toast state
-    utils/ for small shared helpers
-
-Main protected routes:
-
-    /dashboard
-    /products
-    /suppliers
-    /analytics
-    /alerts
-    /purchase-history
-    /settings
-
-Public routes:
-
-    /login
-    /signup
-    /reset-password
-
-Notes for Cleanup / Refactor Work
-
-Safe cleanup targets usually include:
-
-    __pycache__/
-    old refactor helper scripts
-    duplicate generated files that are no longer referenced
-
-Do not remove these if you want to preserve behavior and data:
-
-    inventix.db
-    uploads/avatars/
-    backend and frontend source files
-
-Verification
-
-Recommended checks after changes:
-
-cd inventix\frontend
-npm run build
-
-cd inventix
-.\venv\Scripts\python.exe -c "import backend.app.main; print('backend ok')"
-
+If you like this project, give it a ⭐ and share it!
