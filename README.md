@@ -2,7 +2,7 @@
 
 ### *Smart Inventory Management System*
 
-**Inventix** is a modern, full-stack inventory management system designed to help businesses track stock, manage suppliers, and make data-driven decisions with ease.
+Inventix is a smart inventory management system that enables businesses to track stock, manage products and suppliers, and monitor inventory in real time. It simplifies operations, reduces manual effort, prevents stock issues, and supports better decision-making through clear insights and analytics.
 
 ---
 
