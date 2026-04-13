@@ -2,18 +2,6 @@
 
 ### *Smart Inventory Management System*
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Backend-FastAPI-green?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Build-Vite-purple?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Database-SQLite-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/License-MIT-black?style=for-the-badge" />
-</p>
-
----
-
-## ✨ Overview
-
 **Inventix** is a modern, full-stack inventory management system designed to help businesses track stock, manage suppliers, and make data-driven decisions with ease.
 
 ---
