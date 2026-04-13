@@ -41,30 +41,6 @@ inventix/
 
 ---
 
-## 🚀 Getting Started
-
-### 🔹 Clone Repository
-
-```bash id="xkk6g9"
-git clone https://github.com/your-username/inventix.git
-cd inventix
-```
-
-### 🔹 Run Backend
-
-```bash id="1j5umk"
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
-
-### 🔹 Run Frontend
-
-```bash id="l4o03k"
-cd frontend
-npm install
-npm run dev
-```
 
 ---
 
