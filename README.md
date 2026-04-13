@@ -20,7 +20,7 @@ Inventix is a smart inventory management system that enables businesses to track
 
 | Layer    | Technology                |
 | -------- | ------------------------- |
-| Backend  | FastAPI,Node.js,Express.js|
+| Backend  | FastAPI, Node.js, Express.js|
 | Frontend | React, Vite, Tailwind CSS |
 | Database | SQLite, MongoDB, Mongoose |
 | Charts   | Chart.js                  |
