@@ -69,7 +69,3 @@ This project is licensed under the MIT License.
 Hariezwar U
 
 ---
-
-## ⭐ Support
-
-If you like this project, give it a ⭐ and share it!
